@@ -63,6 +63,7 @@ var Conv map[string]int = map[string]int{
 	"<B>":   48,
 	"<N>":   49,
 	"<M>":   50,
+
 	"<F1>":  59,
 	"<F2>":  60,
 	"<F3>":  61,
