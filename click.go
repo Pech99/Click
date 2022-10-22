@@ -36,7 +36,7 @@ func main() {
 			VK.SHIFTR(true)
 		case "<ALTGR>":
 			VK.ALTGR(true)
-		case "<Super>":
+		case "<SUPER>":
 			VK.Super(true)
 
 		case "<-CTRL>":
@@ -51,7 +51,7 @@ func main() {
 			VK.SHIFTR(false)
 		case "<-ALTGR>":
 			VK.ALTGR(false)
-		case "<-Super>":
+		case "<-SUPER>":
 			VK.Super(false)
 		default:
 			VK.Press(VK.Conv[key])
