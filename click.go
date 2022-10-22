@@ -6,23 +6,18 @@ import (
 	"strings"
 	"time"
 
-	VK "github.com/Pech99/Click/VKconv"
-	"github.com/micmonay/keybd_event"
+	"github.com/Pech99/Click/VK"
 )
 
 // .\click.exe <ctrl> <alt> <canc>
-func main() {
+//complile: go build -ldflags "-H windowsgui"
+//hiden console
 
-	kb, err := keybd_event.NewKeyBonding()
-	if err != nil {
-		panic(err)
-	}
+func main() {
 
 	if runtime.GOOS == "linux" {
 		time.Sleep(2 * time.Second)
 	}
-
-	var keys []int
 
 	for _, key := range os.Args[1:] {
 
@@ -30,36 +25,38 @@ func main() {
 
 		switch key {
 		case "<CTRL>":
-			kb.HasCTRL(true)
+			VK.CTRL(true)
 		case "<ALT>":
-			kb.HasALT(true)
+			VK.ALT(true)
 		case "<SHIFT>":
-			kb.HasSHIFT(true)
+			VK.SHIFT(true)
 		case "<RCTR>":
-			kb.HasCTRLR(true)
+			VK.CTRLR(true)
 		case "<RSHIFT>":
-			kb.HasSHIFTR(true)
+			VK.SHIFTR(true)
 		case "<ALTGR>":
-			kb.HasALTGR(true)
+			VK.ALTGR(true)
 		case "<Super>":
-			kb.HasSuper(true)
+			VK.Super(true)
+
+		case "<-CTRL>":
+			VK.CTRL(false)
+		case "<-ALT>":
+			VK.ALT(false)
+		case "<-SHIFT>":
+			VK.SHIFT(false)
+		case "<-RCTR>":
+			VK.CTRLR(false)
+		case "<-RSHIFT>":
+			VK.SHIFTR(false)
+		case "<-ALTGR>":
+			VK.ALTGR(false)
+		case "<-Super>":
+			VK.Super(false)
 		default:
-			keys = append(keys, VK.Conv[key])
+			VK.Press(VK.Conv[key])
 		}
 	}
 
-	if len(keys) > 0 {
-		kb.SetKeys(keys...)
-	}
-
-	err = kb.Launching()
-	if err != nil {
-		panic(err)
-	}
-
-	kb.Press()
-	time.Sleep(10 * time.Millisecond)
-	kb.Release()
-
-	return
+	VK.Release()
 }
