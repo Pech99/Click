@@ -1,6 +1,6 @@
 package VKconv
 
-var conv map[string]int = map[string]int{
+var Conv map[string]int = map[string]int{
 
 	"<SHIFT>":               0x10 + 0xFFF,
 	"<CTRL>":                0x11 + 0xFFF,
