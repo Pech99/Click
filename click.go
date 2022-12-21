@@ -29,6 +29,7 @@ func main() {
 			if err == nil {
 				time.Sleep(time.Duration(ms) * time.Millisecond)
 			}
+			continue
 		}
 
 		switch key {
