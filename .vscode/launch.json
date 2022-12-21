@@ -10,7 +10,7 @@
             "request": "launch",
             "mode": "auto",
             "program": "${fileDirname}",
-            "args": ["<a>", "<b>", "<c>"]
+            "args": ["<+S100>", "<b>", "<c>"]
         }
     ]
 }

@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 	"runtime"
+	"strconv"
 	"strings"
 	"time"
 
@@ -22,6 +23,13 @@ func main() {
 	for _, key := range os.Args[1:] {
 
 		key = strings.ToUpper(key)
+
+		if key[:3] == "<#S" && key[len(key)-1] == '>' {
+			ms, err := strconv.Atoi(key[3 : len(key)-1])
+			if err == nil {
+				time.Sleep(time.Duration(ms) * time.Millisecond)
+			}
+		}
 
 		switch key {
 		case "<CTRL>":
@@ -56,6 +64,7 @@ func main() {
 		default:
 			VK.Press(VK.Conv[key])
 		}
+		time.Sleep(5 * time.Millisecond)
 	}
 
 	VK.Release()
