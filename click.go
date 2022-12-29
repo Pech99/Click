@@ -24,7 +24,7 @@ func main() {
 
 		key = strings.ToUpper(key)
 
-		if key[:3] == "<#S" && key[len(key)-1] == '>' {
+		if key[:3] == "<@S" && key[len(key)-1] == '>' {
 			ms, err := strconv.Atoi(key[3 : len(key)-1])
 			if err == nil {
 				time.Sleep(time.Duration(ms) * time.Millisecond)
