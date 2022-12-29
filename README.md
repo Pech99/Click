@@ -9,7 +9,7 @@ I tasti permanenti sono: <code>\<ALT></code>, <code>\<SHIFT></code>, <code>\<CTR
 Questi tasti vengono tenuti premuti e rimarranno premuti da qando è stato ricevuto il comanddo a quando non  si riceverà il comando di rilasio (<code>\<-tasto></code>).
 
 ## Cmnado Sleep
-inserendo la direttiva <code>\<#S[sec]></code> si può efettuare una pausa dalla pressione dei tasti per il numero di milliscecondi desiderato. <code>sec</code> dev'essere un parametro intero positivo.
+inserendo la direttiva <code>\<@S[sec]></code> si può efettuare una pausa dalla pressione dei tasti per il numero di milliscecondi desiderato. <code>sec</code> dev'essere un parametro intero positivo.
 
 ### Esempio
 per scrivere <code>HEY</code>, sarà necessaria la seguente invocazione del'comando:
